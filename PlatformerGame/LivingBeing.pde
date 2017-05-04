@@ -3,7 +3,7 @@ class LivingBeing {
   int x;
   int y;
   
-  public LivingBeing(int xx, yy, String image) {
+  public LivingBeing(int xx, int yy, String image) {
     x = xx;
     y = yy;
     img = loadImage(image + ".png");
