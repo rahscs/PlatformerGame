@@ -20,15 +20,20 @@ private void on_init() {
 }
 
 public void keyPressed() {
-  if(key == CODED) {
-    if(keyCode == RIGHT) 
+  if(keyPressed) {
+    if(key == 'd') 
       hero.x += 5;
-     else if (keyCode == LEFT) 
+     else if (key == 'a') 
         hero.x -= 5;
-     else if (keyCode == UP)
+     else if (key == 'e') 
+       hero.state = Hero.ATTACK;
+     else if (key == 'w') {
+       hero.jumpCount ++;
+       if (hero.jumpCount <=2 )
        hero.jump = 1;
-      else if (keyCode == DOWN)
+     }  else if (key == 's')
         hero.y += 5;
+    
   }
 }
 
