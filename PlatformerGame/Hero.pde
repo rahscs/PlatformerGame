@@ -9,7 +9,7 @@ class Hero extends LivingBeing {
   final static int ATTACK = 1;
   
   public Hero() {
-    super(0, 120, "MC_default");
+    super(0, 250, "MC_default");
     attack = loadImage("MC_attack" + ".png");
   }
   
@@ -17,15 +17,19 @@ class Hero extends LivingBeing {
     
     if (jump>0) {
       if (jump>20) {
-        y+=3;
+        if (y<250||(x<200 && x>160))
+          y+=3;
+          else {
+            jumpCount = 0;
+          }
       }
       else {
         y-=2;
       }
-      image(img, x, y);
+      image(img, x, y, width/4, height/2);
       jump++;
     } else {
-      image(img, x, y);
+      image(img, x, y, width/4, height/2);
     }
     if(hurt) {
         lives --;

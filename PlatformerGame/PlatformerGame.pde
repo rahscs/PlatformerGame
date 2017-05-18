@@ -2,7 +2,7 @@ Hero hero;
 //Drill drill;
 //Monster monster;
 //Boss boss;
-//World world;
+World world;
 
 void setup() {
   size(960, 540);
@@ -15,7 +15,7 @@ private void on_init() {
   // drill = new Drill();
   // monster = new Monster();
   // boss = new Boss();
-  // world = new World();
+   world = new World();
   
 }
 
@@ -31,13 +31,11 @@ public void keyPressed() {
        hero.jumpCount ++;
        if (hero.jumpCount <=2 )
        hero.jump = 1;
-     }  else if (key == 's')
-        hero.y += 5;
-    
+     }
   }
 }
 
 void draw() {
-  background(0, 0, 0);
+  world.loop();
   hero.loop();
 }
